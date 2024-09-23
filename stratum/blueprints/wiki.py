@@ -21,7 +21,7 @@ class WikiRenderer(HTMLRenderer):
 
 
 bp = Blueprint("wiki", __name__)
-markdown = mistune.create_markdown(renderer=WikiRenderer())
+markdown = mistune.create_markdown(renderer=WikiRenderer(), plugins=["table"])
 
 
 @cache.cached(timeout=21600)
