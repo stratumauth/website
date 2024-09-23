@@ -46,8 +46,9 @@ h1, h2, h3, h4, h5, h6 {
     margin: 0;
 
     [class^="icon-"] {
+        position: relative;
+        top: 2px;
         margin-right: 10px;
-        vertical-align: middle;
         color: $text_500;
     }
 }
