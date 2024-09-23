@@ -21,6 +21,10 @@
                 </div>
                 <div class="sm-col12 md-col8">
                     {% if success != True %}
+                        {% if success == False %}
+                            <strong class="block mb">An error occurred when sending the message, please try again.</strong>
+                        {% endif %}
+                        
                         <form action="/feedback" method="post">
                             {{ form.csrf_token }}
 
@@ -32,17 +36,17 @@
 
                             <div class="mb2">
                                 <label for="email">Email address<br><small>An email to reply to</small></label>
-                                <input name="email" id="email" type="email" placeholder="example@example.com" required>
+                                {{ form.email }}
                             </div>
 
                             <div class="mb2">
                                 <label for="subject">Subject<br><small>A brief description of your message</small></label>
-                                <input name="subject" id="subject" type="text" maxlength="120" placeholder="Hello" required>
+                                {{ form.subject }}
                             </div>
 
                             <div class="mb2">
                                 <label for="message">Message<br><small>Your message text</small></label>
-                                <textarea name="message" id="message" maxlength="2000" required></textarea>
+                                {{ form.message }}
                             </div>
 
                             <div class="row">

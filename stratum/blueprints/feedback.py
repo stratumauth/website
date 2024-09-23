@@ -5,7 +5,7 @@ from flask import Blueprint, current_app, render_template
 from flask_wtf import FlaskForm, RecaptchaField
 from flask_mail import Message
 
-from wtforms import EmailField, StringField
+from wtforms import EmailField, StringField, TextAreaField
 from wtforms.validators import DataRequired, Email, Length
 
 from stratum import mail
@@ -14,9 +14,17 @@ bp = Blueprint("feedback", __name__)
 
 
 class FeedbackForm(FlaskForm):
-    email = EmailField("email", validators=[DataRequired(), Email()])
-    subject = StringField("subject", validators=[DataRequired(), Length(max=120)])
-    message = StringField("message", validators=[DataRequired(), Length(max=2000)])
+    email = EmailField(
+        "email",
+        validators=[DataRequired(), Email()],
+        render_kw={"placeholder": "example@example.com"},
+    )
+    subject = StringField(
+        "subject",
+        validators=[DataRequired(), Length(max=120)],
+        render_kw={"placeholder": "Hello"},
+    )
+    message = TextAreaField("message", validators=[DataRequired(), Length(max=2000)])
     captcha = RecaptchaField()
 
 
