@@ -1,0 +1,21 @@
+// Copyright (C) 2023 jmh
+// SPDX-License-Identifier: GPL-3.0-only
+
+@import "../values";
+
+.checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    [class^="icon-"] {
+        margin-right: 12px;
+        font-size: 20px;
+        color: $primary_700;
+    }
+
+    li {
+        display: flex;
+        align-items: flex-start;
+    }
+}

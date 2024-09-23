@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta charset="utf-8">
+
+    <title>{% block title %}{% endblock %} - Stratum</title>
+    <meta name="description" content="{% block description %}{% endblock %}">
+
+    <link rel="preload" href="{{ url_for('static', filename='fonts/rubik-v26-latin-regular.woff2') }}" as="font">
+    <link rel="preload" href="{{ url_for('static', filename='fonts/rubik-v26-latin-500.woff2') }}" as="font">
+    <link rel="preload" href="{{ url_for('static', filename='fonts/roboto-mono-v22-latin-regular.woff2') }}" as="font">
+    <link rel="preload" href="{{ url_for('static', filename='fonts/icomoon.woff') }}" as="font">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url_for('static', filename='img/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='img/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='img/favicon-16x16.png') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.ico') }}" type="image/x-icon">
+    <link rel="manifest" href="{{ url_for('static', filename='site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url_for('static', filename='safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
+
+    <link rel="stylesheet" href="{{ url_for("static", filename="dist/main.css") }}">
+<body>
+
+<div class="container">
+    <header id="head">
+        <a href="/" id="logo">
+            <img src="{{ url_for("static", filename="img/logo.svg") }}" alt="Stratum" width="112" height="30">
+        </a>
+
+        <nav id="nav">
+            <button id="close-menu"><i class="icon-clear"></i>Close</button>
+            <ul>
+                <li><a href="/">About</a></li>
+                <li><a href="/download">Download</a></li>
+                <li><a href="/wiki">Wiki</a></li>
+                <li><a href="/icon-packs">Icon Packs</a></li>
+                <li><a href="/tools">Tools</a></li>
+                <li><a href="/feedback">Feedback</a></li>
+            </ul>
+        </nav>
+
+        <button id="open-menu"><i class="icon-menu"></i></button>
+    </header>
+</div>
+
+{% block content %}{% endblock %}
+
+<footer id="foot">
+    <div class="container">
+        Stratum - &copy; <a href="https://jmh.me">jmh</a> {{ copyright_year }}
+    </div>
+</footer>
+
+<script defer src="{{ url_for("static", filename="dist/main.js") }}"></script>
+
+</body>
+</html>
+

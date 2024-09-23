@@ -1,0 +1,124 @@
+// Copyright (C) 2023 jmh
+// SPDX-License-Identifier: GPL-3.0-only
+
+@use "sass:color";
+
+// ------------------------------------------------------
+// Variables
+// ------------------------------------------------------
+
+// Colours
+$primary_500: #00658B;
+$primary_400: color.adjust($primary_500, $lightness: 4%);
+$primary_300: color.adjust($primary_500, $lightness: 8%);
+$primary_200: color.adjust($primary_500, $lightness: 16%);
+$primary_100: color.adjust($primary_500, $lightness: 32%);
+$primary_600: color.adjust($primary_500, $lightness: -2%);
+$primary_700: color.adjust($primary_500, $lightness: -4%);
+$primary_800: color.adjust($primary_500, $lightness: -6%);
+$primary_900: color.adjust($primary_500, $lightness: -8%);
+
+$secondary_500: #4E616D;
+$secondary_400: color.adjust($secondary_500, $lightness: 2%);
+$secondary_300: color.adjust($secondary_500, $lightness: 4%);
+$secondary_200: color.adjust($secondary_500, $lightness: 8%);
+$secondary_100: color.adjust($secondary_500, $lightness: 16%);
+$secondary_600: color.adjust($secondary_500, $lightness: -2%);
+$secondary_700: color.adjust($secondary_500, $lightness: -4%);
+$secondary_800: color.adjust($secondary_500, $lightness: -8%);
+$secondary_900: color.adjust($secondary_500, $lightness: -16%);
+
+$tertiary_500: #615A7C;
+$tertiary_400: color.adjust($tertiary_500, $lightness: 2%);
+$tertiary_300: color.adjust($tertiary_500, $lightness: 4%);
+$tertiary_200: color.adjust($tertiary_500, $lightness: 8%);
+$tertiary_100: color.adjust($tertiary_500, $lightness: 16%);
+$tertiary_600: color.adjust($tertiary_500, $lightness: -2%);
+$tertiary_700: color.adjust($tertiary_500, $lightness: -4%);
+$tertiary_800: color.adjust($tertiary_500, $lightness: -8%);
+$tertiary_900: color.adjust($tertiary_500, $lightness: -16%);
+
+$text_500: #191C1E;
+$text_100: color.adjust($text_500, $lightness: 48%);
+$text_200: color.adjust($text_500, $lightness: 32%);
+$text_300: color.adjust($text_500, $lightness: 16%);
+$text_400: color.adjust($text_500, $lightness: 8%);
+$text_600: color.adjust($text_500, $lightness: -2%);
+$text_700: color.adjust($text_500, $lightness: -4%);
+$text_800: color.adjust($text_500, $lightness: -6%);
+$text_900: color.adjust($text_500, $lightness: -8%);
+
+$text_inv_500: #F0F1F3;
+$text_inv_600: color.adjust($text_inv_500, $lightness: -2%);
+$text_inv_700: color.adjust($text_inv_500, $lightness: -4%);
+$text_inv_800: color.adjust($text_inv_500, $lightness: -6%);
+$text_inv_900: color.adjust($text_inv_500, $lightness: -8%);
+
+$surface: #FBFCFF;
+
+// Fonts
+$font_primary: "Rubik", sans-serif;
+$font_mono: "Roboto Mono", monospace;
+
+$text_line_height_scale: 1.5;
+$paragraph_line_height_scale: 1.8;
+$heading_line_height_scale: 1.2;
+
+// Sizes
+$container_width: 1040px;
+
+// ------------------------------------------------------
+// Font faces
+// ------------------------------------------------------
+
+@font-face {
+    font-display: swap;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/rubik-v26-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Rubik";
+    font-style: normal;
+    font-weight: 500;
+    src: url("/fonts/rubik-v26-latin-500.woff2") format("woff2");
+}
+
+@font-face {
+    font-display: swap;
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 400;
+    src: url("/fonts/roboto-mono-v22-latin-regular.woff2") format("woff2");
+}
+
+
+@font-face {
+    font-family: "icomoon";
+    src: url("/fonts/icomoon.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+// ------------------------------------------------------
+// Mixins
+// ------------------------------------------------------
+
+@mixin clearfix {
+    &::after {
+        content: " ";
+        display: block;
+        height: 0;
+        clear: both;
+    }
+}
+
+// ------------------------------------------------------
+// Breakpoints
+// ------------------------------------------------------
+
+$break_md: 700px;

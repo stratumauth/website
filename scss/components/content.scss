@@ -1,0 +1,17 @@
+// Copyright (C) 2023 jmh
+// SPDX-License-Identifier: GPL-3.0-only
+
+@use "sass:color";
+@import "../values";
+
+#content {
+    padding: 30px 20px;
+    background: color.adjust($surface, $lightness: 2%);
+}
+
+@media (min-width: $break_md) {
+    #content {
+        border-radius: 20px;
+        padding: 40px 60px;
+    }
+}

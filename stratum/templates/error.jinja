@@ -1,0 +1,10 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+    <div class="container">
+        <header id="hero">
+            <h1 class="mb">{% block title %}{{ title }}{% endblock %}</h1>
+            <p class="mb0">{% block description %}{{ description }}{% endblock %}</p>
+        </header>
+    </div>
+{% endblock %}

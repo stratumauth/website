@@ -1,0 +1,15 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+    <div class="container">
+        <header id="hero">
+            <h1 class="mb">{% block title %}Wiki{% endblock %}</h1>
+            <p class="mb0">{% block description %}Welcome to the Stratum wiki{% endblock %}</p>
+        </header>
+
+        <main id="content">
+            <p class="mb2">This wiki contains useful tips and tricks for using Stratum. Check out the links below for information.</p>
+            {% include "wiki/toc.jinja" %}
+        </main>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+    <div class="container">
+        <header id="hero">
+            <h1 class="mb">{% block title %}{{ title }}{% endblock %}</h1>
+            <p class="mb0">{% block description %}{{ description }}{% endblock %}</p>
+        </header>
+
+        <main id="content">
+            <nav class="mb2">
+                <ul class="breadcrumbs">
+                    <li>
+                        <a href="/">Stratum</a>
+                    </li>
+                    <li>
+                        <a href="/wiki">Wiki</a>
+                    </li>
+                    <li>
+                        {{ title }}
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="row gaps2">
+                <div class="sm-col12 md-col8">
+                    <article class="wiki">
+                        {{ content }}
+                    </article>
+                </div>
+
+                <div class="sm-col12 md-col4">
+                    <h2 class="mb2">Wiki pages</h2>
+                    {% include "wiki/toc.jinja" %}
+                </div>
+            </div>
+        </main>
+    </div>
+{% endblock %}

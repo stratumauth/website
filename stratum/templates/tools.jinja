@@ -1,0 +1,52 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+    <div class="container">
+        <header id="hero">
+            <h1 class="mb">{% block title %}Tools{% endblock %}</h1>
+            <p class="mb0">{% block description %}Useful tools from Stratum{% endblock %}</p>
+        </header>
+
+        <main id="content">
+            <section>
+                <h2 class="mb">QR code generator</h2>
+                <p class="mb2">Generate a text based QR code directly in your browser. No information is transmitted to a remote server.</p>
+
+                <div class="row gaps2">
+                    <div class="sm-col12 md-col7">
+                        <form class="mb2" id="qrcode-form">
+                            <textarea class="mono mb" name="text" maxlength="1000" placeholder="otpauth://totp/Example:alice@example.com?secret=JBSWY3DPEHPK3PXP&issuer=Example" required></textarea>
+                            <button type="submit" class="button primary right">Generate QR code</button>
+                        </form>
+                    </div>
+                    <div class="sm-col12 md-col5">
+                        <h3 class="mb2">Result</h3>
+                        <canvas id="qrcode-canvas"></canvas>
+                    </div>
+                </div>
+
+                <h3 class="mb">Example URI formats</h3>
+                <p class="mb">Replace the placeholders in brackets to generate a URI</p>
+
+                <dl>
+                    <dt>TOTP</dt>
+                    <dd class="mono">otpauth://totp/[issuer]:[username]?secret=[secret]&issuer=[issuer]</dd>
+
+                    <dt>HOTP</dt>
+                    <dd class="mono">otpauth://hotp/[issuer]:[username]?secret=[secret]&issuer=[issuer]&counter=[counter]</dd>
+
+                    <dt>Steam</dt>
+                    <dd class="mono">otpauth://totp/Steam?secret=[secret]&issuer=Steam</dd>
+
+                    <dt>Yandex</dt>
+                    <dd class="mono">otpauth://yaotp/Yandex:[username]?secret=[secret]&pin_length=[pin length]</dd>
+
+                    <dt>mOTP (Mobile-Otp)</dt>
+                    <dd class="mono">motp://[issuer]:[username]?secret=[secret]</dd>
+                </dl>
+            </section>
+        </main>
+    </div>
+
+    <script defer src="{{ url_for('static', filename='dist/tools.js') }}"></script>
+{% endblock %}

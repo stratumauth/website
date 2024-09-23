@@ -1,0 +1,23 @@
+{% extends "base.jinja" %}
+
+{% block content %}
+    <div class="container">
+        <header id="hero">
+            <h1 class="mb">{% block title %}Icon Packs{% endblock %}</h1>
+            <p class="mb0">{% block description %}Downloadable icon packs for Stratum{% endblock %}</p>
+        </header>
+
+        <main id="content">
+            <p>The following icon packs are generated every month from various sources. You can update an icon pack by simply downloading the latest version and importing it into Stratum. The source code for the generation is available on <a href="https://github.com/jamie-mh/AuthenticatorProIcons" target="_blank" rel="nofollow noopener">GitHub</a>.</p>
+
+            {% for pack in packs %}
+                <div class="mt3">
+                    <h3 class="mb">{{ pack.name }}</h3>
+                    <p>{{ pack.description }}</p>
+                    <a href="{{ pack.download_url }}" class="button neutral mr" target="_blank" rel="nofollow noopener"><i class="icon-file_download"></i>Download ({{ pack.icon_count }} icons)</a>
+                    <small>{{ pack.download_count }} downloads</small>
+                </div>
+            {% endfor %}
+        </main>
+    </div>
+{% endblock %}
