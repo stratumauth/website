@@ -10,6 +10,9 @@ def _get_secret(name: str) -> str:
 
 
 class ProductionConfig(BaseConfig):
+    URL = "https://stratumauth.com"
+    ALT_URL = "http://www.stratumauth.com"
+
     SECRET_KEY = _get_secret("secret_key")
 
     CACHE_TYPE = "RedisCache"

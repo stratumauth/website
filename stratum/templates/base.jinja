@@ -7,6 +7,10 @@
     <title>{% block title %}{% endblock %} - Stratum</title>
     <meta name="description" content="{% block description %}{% endblock %}">
 
+    {% if request.url.startswith(config["ALT_URL"]) %}
+        <link rel="canonical" href="{{ config['URL'] }}{{ request.path }}">
+    {% endif %}
+
     <link rel="preload" href="{{ url_for('static', filename='fonts/rubik-v26-latin-regular.woff2') }}" as="font">
     <link rel="preload" href="{{ url_for('static', filename='fonts/rubik-v26-latin-500.woff2') }}" as="font">
     <link rel="preload" href="{{ url_for('static', filename='fonts/roboto-mono-v22-latin-regular.woff2') }}" as="font">
