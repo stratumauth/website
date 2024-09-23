@@ -1,6 +1,42 @@
 services:
+  website:
+    image: ghcr.io/jamie-mh/stratumwebsite:latest
+    container_name: stratum-website
+    restart: always
+    environment:
+      - FLASK_ENV=production
+    ports:
+      - "8000:8000"
+    networks:
+      - stratum
+    depends_on:
+      - redis
+    secrets:
+      - secret_key
+      - recaptcha_private_key
+      - mail_username
+      - mail_password
+      - mail_recipient
+  
   redis:
     image: redis:7-alpine
     container_name: stratum-redis
-    ports:
-      - "6379:6379"
+    restart: always
+    networks:
+      - stratum
+
+secrets:
+    secret_key:
+      file: ./secrets/secret_key.txt
+    recaptcha_private_key:
+      file: ./secrets/recaptcha_private_key.txt
+    mail_username:
+      file: ./secrets/mail_username.txt
+    mail_password:
+      file: ./secrets/mail_password.txt
+    mail_recipient:
+      file: ./secrets/mail_recipient.txt
+
+networks:
+  stratum:
+    driver: bridge

@@ -32,16 +32,24 @@ def create_app(test_config=None):
 
     if test_config is not None:
         app.config.from_mapping(test_config)
-        app.config.from_object("stratum.config.TestingConfig")
+        app.config.from_object("stratum.config.development.TestingConfig")
     elif os.environ["FLASK_ENV"] == "development":
-        app.config.from_object("stratum.config.DevelopmentConfig")
+        app.config.from_object("stratum.config.development.DevelopmentConfig")
     else:
-        app.config.from_object("stratum.config.ProductionConfig")
+        app.config.from_object("stratum.config.production.ProductionConfig")
 
     cache.init_app(app)
     mail.init_app(app)
 
-    from .blueprints import home, download, wiki, iconpacks, tools, feedback, privacy
+    from .blueprints import (
+        home,
+        download,
+        wiki,
+        iconpacks,
+        tools,
+        feedback,
+        privacy,
+    )
 
     app.register_blueprint(home.bp)
     app.register_blueprint(download.bp)
