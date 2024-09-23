@@ -9,5 +9,7 @@ class IconPack:
     name: str
     description: str
     download_url: str
+    source_url: str
     download_count: int
     icon_count: int
+    previews: list[str]

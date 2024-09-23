@@ -8,14 +8,28 @@
         </header>
 
         <main id="content">
-            <p>The following icon packs are generated every month from various sources. You can update an icon pack by simply downloading the latest version and importing it into Stratum. The source code for the generation is available on <a href="https://github.com/jamie-mh/AuthenticatorProIcons" target="_blank" rel="nofollow noopener">GitHub</a>.</p>
+            <p>The following icon packs are generated monthly. You can update an icon pack by simply downloading the latest version and importing it into Stratum. The source code for the generation is available on <a href="https://github.com/jamie-mh/AuthenticatorProIcons" target="_blank" rel="nofollow noopener">GitHub</a>.</p>
 
             {% for pack in packs %}
                 <div class="mt3">
                     <h3 class="mb">{{ pack.name }}</h3>
-                    <p>{{ pack.description }}</p>
-                    <a href="{{ pack.download_url }}" class="button neutral mr" rel="nofollow noopener"><i class="icon-file_download"></i>Download ({{ pack.icon_count }} icons)</a>
-                    <small>{{ pack.download_count }} downloads</small>
+                    <p>
+                        {{ pack.description }}
+                        <small><a href="{{ pack.source_url }}" target="_blank" rel="nofollow noopener">(source)</a></small>
+                    </p>
+
+                    <div class="preview-strip mb{{ '2 white' if 'white' in pack.name else '' }}">
+                        {% for preview in pack.previews %}
+                            <img src="data:image/png;base64,{{ preview }}">
+                        {% endfor %}
+                    </div>
+               
+                    <div class="row sm-middle">
+                        <a href="{{ pack.download_url }}" class="button neutral mr" rel="nofollow noopener"><i class="icon-file_download"></i>Download ({{ pack.icon_count }} icons)</a>
+                        <div class="sm-col ml">
+                            <small>{{ pack.download_count }} downloads this month</small>
+                        </div>
+                    </div>
                 </div>
             {% endfor %}
         </main>

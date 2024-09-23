@@ -1,0 +1,32 @@
+// Copyright (C) 2024 jmh
+// SPDX-License-Identifier: GPL-3.0-only
+
+@import "../values";
+
+.preview-strip {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 10px;
+    
+    img {
+        width: 48px;
+        height: 48px;
+    }
+    
+    img:not(:last-of-type) {
+        margin-right: 8px;
+    }
+}
+
+.preview-strip.white {
+    background: rgba(0, 0, 0, .2);
+    border-radius: 20px;
+}
+
+.preview-strip::after {
+    content: ". . .";
+    font-size: 22px;
+    font-weight: 600;
+    color: $text_100;
+    padding-left: 20px;
+}
