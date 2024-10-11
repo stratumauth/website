@@ -1,5 +1,5 @@
 FROM python:3.12-alpine
-LABEL org.opencontainers.image.source=https://github.com/jamie-mh/StratumWebsite
+LABEL org.opencontainers.image.source=https://github.com/stratumauth/website
 
 RUN python -m venv /venv
 COPY ./requirements.txt /venv/requirements.txt
