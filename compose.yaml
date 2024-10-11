@@ -1,6 +1,6 @@
 services:
   website:
-    image: ghcr.io/jamie-mh/stratumwebsite:latest
+    image: ghcr.io/stratumauth/website:latest
     container_name: stratum-website
     restart: always
     environment:
