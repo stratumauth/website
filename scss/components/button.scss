@@ -20,6 +20,7 @@
 
     &:hover, &:focus {
         text-decoration: none;
+        box-shadow: rgba(0, 0, 0, .1) 0 0 12px;
     }
 
     [class^="icon-"] {
