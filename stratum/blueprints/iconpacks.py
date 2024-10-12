@@ -61,7 +61,10 @@ def _get_icon_pack_from_asset(asset: dict) -> IconPack:
 @cache.cached(timeout=86400)
 def _get_icon_packs() -> list[IconPack]:
     release = _get_latest_release()
-    return [_get_icon_pack_from_asset(a) for a in release["assets"]]
+    return [
+        _get_icon_pack_from_asset(a)
+        for a in filter(lambda a: a["name"].endswith(".iconpack"), release["assets"])
+    ]
 
 
 @bp.get("/icon-packs")

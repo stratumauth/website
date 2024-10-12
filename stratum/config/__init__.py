@@ -10,6 +10,4 @@ class BaseConfig(object):
         "https://api.github.com/repos/stratumauth/icons/releases/latest"
     )
     WIKI_FILE_URL = "https://raw.githubusercontent.com/wiki/stratumauth/app"
-    MARKDOWN_FILE_URL = (
-        "https://raw.githubusercontent.com/stratumauth/app/master"
-    )
+    MARKDOWN_FILE_URL = "https://raw.githubusercontent.com/stratumauth/app/master"
