@@ -97,9 +97,9 @@ jobs:
       - name: Delete old images
         uses: snok/container-retention-policy@v3.0.0
         with:
-          account: user
+          account: stratumauth
           token: ${{ secrets.PAT }}
-          image-names: "stratumwebsite*"
+          image-names: "website*"
           image-tags: "!latest v*"
           cut-off: 2d
           keep-n-most-recent: 3
