@@ -88,3 +88,18 @@ jobs:
           docker compose -f compose.yaml down
           docker compose -f compose.yaml up --no-deps -d
           docker image prune -f
+
+  clean:
+    runs-on: ubuntu-latest
+    needs: deploy
+
+    steps:
+      - name: Delete old images
+        uses: snok/container-retention-policy@v3.0.0
+        with:
+          account: user
+          token: ${{ secrets.PAT }}
+          image-names: "stratumwebsite*"
+          image-tags: "!latest v*"
+          cut-off: 2d
+          keep-n-most-recent: 3
