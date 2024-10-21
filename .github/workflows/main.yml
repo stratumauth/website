@@ -65,26 +65,24 @@ jobs:
               ControlPersist yes
           END
 
-      - name: Prepare secrets
-        run: |
-          for file in secrets/*.gpg ; do
-            gpg --batch --output $(echo $file | sed 's/\.gpg/\.txt/g') --passphrase '${{ secrets.SECRETS_PASSPHRASE }}' --decrypt $file
-          done
-
-          ssh stratum -f 'mkdir ~/secrets'
-          rsync -avzr --delete --exclude='*.gpg' ./secrets stratum:~/
-          ssh stratum -f 'chmod -R 740 ~/secrets'
-          
-      - name: Prepare Compose file
-        run: |
-          # Deploy current tag and adjust secrets location
-          sed -i 's/stratumwebsite:latest/stratumwebsite:${{ github.ref_name }}/' compose.yaml
-          sed -i 's|./secrets|/home/${{ secrets.DEPLOY_USER }}/secrets|g' compose.yaml
+      - name: Get secrets
+        uses: bitwarden/sm-action@v2
+        with:
+          access_token: ${{ secrets.BW_ACCESS_TOKEN }}
+          secrets: |
+            8e94c49e-5fb9-4a84-b49e-b210011962d5 > FLASK_SECRET_KEY
+            404ef33c-e193-4787-8903-b210011951d5 > RECAPTCHA_PRIVATE_KEY
+            c534a2fe-3fc6-47c3-bf08-b21001192353 > MAIL_USERNAME
+            0cd8bdf2-e0b3-4988-be65-b21001193a6a > MAIL_PASSWORD
+            2b41bff7-777e-4606-bcde-b21001190c37 > MAIL_RECIPIENT
 
       - name: Deploy
         run: |
           export DOCKER_HOST=ssh://stratum
           echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+          
+          # Deploy current tag
+          sed -i 's/stratumwebsite:latest/stratumwebsite:${{ github.ref_name }}/' compose.yaml
 
           docker compose -f compose.yaml pull
           docker compose -f compose.yaml down

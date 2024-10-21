@@ -13,7 +13,7 @@ class ProductionConfig(BaseConfig):
     URL = "https://stratumauth.com"
     ALT_URL = "http://www.stratumauth.com"
 
-    SECRET_KEY = _get_secret("secret_key")
+    SECRET_KEY = _get_secret("flask_secret_key")
 
     CACHE_TYPE = "RedisCache"
     CACHE_REDIS_HOST = "redis"

@@ -12,7 +12,7 @@ services:
     depends_on:
       - redis
     secrets:
-      - secret_key
+      - flask_secret_key
       - recaptcha_private_key
       - mail_username
       - mail_password
@@ -26,16 +26,16 @@ services:
       - stratum
 
 secrets:
-    secret_key:
-      file: ./secrets/secret_key.txt
-    recaptcha_private_key:
-      file: ./secrets/recaptcha_private_key.txt
-    mail_username:
-      file: ./secrets/mail_username.txt
-    mail_password:
-      file: ./secrets/mail_password.txt
-    mail_recipient:
-      file: ./secrets/mail_recipient.txt
+  flask_secret_key:
+    environment: FLASK_SECRET_KEY
+  recaptcha_private_key:
+    environment: RECAPTCHA_PRIVATE_KEY
+  mail_username:
+    environment: MAIL_USERNAME
+  mail_password:
+    environment: MAIL_PASSWORD
+  mail_recipient:
+    environment: MAIL_RECIPIENT
 
 networks:
   stratum:
