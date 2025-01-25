@@ -1,7 +1,7 @@
 // Copyright (C) 2023 jmh
 // SPDX-License-Identifier: GPL-3.0-only
 
-@import "../values";
+@use "../values";
 
 .checklist {
     list-style: none;
@@ -11,7 +11,7 @@
     [class^="icon-"] {
         margin-right: 12px;
         font-size: 20px;
-        color: $primary_700;
+        color: values.$primary_700;
     }
 
     li {

@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 @use "sass:math";
-@import "values";
+@use "values";
 
 .container {
     width: 100%;
-    max-width: $container_width;
+    max-width: values.$container_width;
     position: relative;
     margin-right: auto;
     margin-left: auto;
@@ -239,7 +239,7 @@
     order: 1;
 }
 
-@media (min-width: $break_md) {
+@media (min-width: values.$break_md) {
     .md-col,
     .md-col1,
     .md-col2,

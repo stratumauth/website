@@ -1,18 +1,18 @@
 // Copyright (C) 2023 jmh
 // SPDX-License-Identifier: GPL-3.0-only
 
-@import "../values";
+@use "../values";
 
 #hero {
     padding: 30px 20px;
-    color: $text_400;
+    color: values.$text_400;
 
     h1 {
-        color: $text_500;
+        color: values.$text_500;
     }
 }
 
-@media (min-width: $break_md) {
+@media (min-width: values.$break_md) {
     #hero {
         padding: 40px 30px;
     }

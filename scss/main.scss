@@ -1,24 +1,24 @@
 // Copyright (C) 2023 jmh
 // SPDX-License-Identifier: GPL-3.0-only
 
-@import "../node_modules/normalize.css/normalize.css";
-@import "thirdparty/icomoon";
+@use "../node_modules/normalize.css/normalize.css";
+@use "thirdparty/icomoon";
 
-@import "global";
+@use "global";
 
 // Components
-@import "components/aspect";
-@import "components/breadcrumbs";
-@import "components/button";
-@import "components/checklist";
-@import "components/content";
-@import "components/footer";
-@import "components/form";
-@import "components/header";
-@import "components/hero";
-@import "components/preview";
-@import "components/table";
-@import "components/wiki";
+@use "components/aspect";
+@use "components/breadcrumbs";
+@use "components/button";
+@use "components/checklist";
+@use "components/content";
+@use "components/footer";
+@use "components/form";
+@use "components/header";
+@use "components/hero";
+@use "components/preview";
+@use "components/table";
+@use "components/wiki";
 
-@import "grid";
-@import "utility";
+@use "grid";
+@use "utility";

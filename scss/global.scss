@@ -2,15 +2,15 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 @use "sass:color";
-@import "values";
+@use "values";
 
 * {
     box-sizing: border-box;
 }
 
 ::selection {
-    background: rgba($tertiary_500, .2);
-    color: $text_500;
+    background: rgba(values.$tertiary_500, .2);
+    color: values.$text_500;
 }
 
 html, body {
@@ -19,29 +19,29 @@ html, body {
 }
 
 body {
-    font-family: $font_primary;
+    font-family: values.$font_primary;
     font-weight: 400;
     font-size: 15px;
-    line-height: 15px * $text_line_height_scale;
-    background-color: $surface;
+    line-height: 15px * values.$text_line_height_scale;
+    background-color: values.$surface;
     background-image: url("/img/background.svg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    color: $text_500;
+    color: values.$text_500;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-@media (min-width: $container_width) {
+@media (min-width: values.$container_width) {
     body {
         padding-top: 20px;
     }
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: $font_primary;
+    font-family: values.$font_primary;
     font-weight: 500;
     margin: 0;
 
@@ -49,33 +49,33 @@ h1, h2, h3, h4, h5, h6 {
         position: relative;
         top: 2px;
         margin-right: 10px;
-        color: $text_500;
+        color: values.$text_500;
     }
 }
 
 h1 {
     font-size: 28px;
-    line-height: 28px * $heading_line_height_scale;
+    line-height: 28px * values.$heading_line_height_scale;
 }
 
-@media(min-width: $break_md) {
+@media(min-width: values.$break_md) {
     h1 {
         font-size: 42px;
-        line-height: 42px * $heading_line_height_scale;
+        line-height: 42px * values.$heading_line_height_scale;
     }
 }
 
 h2 {
     font-size: 22px;
-    line-height: 22px * $heading_line_height_scale;
+    line-height: 22px * values.$heading_line_height_scale;
     padding-bottom: 14px;
-    border-bottom: solid 2px color.adjust($surface, $lightness: -2%);
+    border-bottom: solid 2px color.adjust(values.$surface, $lightness: -2%);
 }
 
 h3 {
     font-size: 18px;
-    line-height: 18px * $heading_line_height_scale;
-    color: $primary_900;
+    line-height: 18px * values.$heading_line_height_scale;
+    color: values.$primary_900;
 }
 
 h4 {
@@ -84,11 +84,11 @@ h4 {
 
 p {
     margin: 0 0 12px 0;
-    line-height: 15px * $paragraph_line_height_scale;
+    line-height: 15px * values.$paragraph_line_height_scale;
 }
 
 a {
-    color: $tertiary_600;
+    color: values.$tertiary_600;
     outline: none;
     text-decoration: none;
 }
@@ -131,17 +131,17 @@ figure {
 }
 
 hr {
-    border: solid 1px color.adjust($surface, $lightness: -4%);
+    border: solid 1px color.adjust(values.$surface, $lightness: -4%);
 }
 
 code {
     font-size: 14px;
-    font-family: $font_mono;
+    font-family: values.$font_mono;
     padding: 2px 8px;
 }
 
 blockquote {
-    font-family: $font_primary;
+    font-family: values.$font_primary;
     margin: 0;
 
     p:last-of-type {
@@ -150,8 +150,8 @@ blockquote {
 }
 
 code, blockquote {
-    background: $surface;
-    border-bottom: solid 1px color.adjust($surface, $lightness: -2%);
+    background: values.$surface;
+    border-bottom: solid 1px color.adjust(values.$surface, $lightness: -2%);
     border-radius: 2px;
     overflow-x: auto;
 }
@@ -160,7 +160,7 @@ pre code, blockquote {
     display: block;
     width: 100%;
     padding: 20px;
-    border-left: solid 4px $tertiary_200;
+    border-left: solid 4px values.$tertiary_200;
 }
 
 dl {

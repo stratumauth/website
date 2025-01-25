@@ -2,11 +2,11 @@
 // SPDX-License-Identifier: GPL-3.0-only
 
 @use "sass:color";
-@import "../values";
+@use "../values";
 
 form {
     margin: 0;
-    @include clearfix;
+    @include values.clearfix;
 }
 
 label, input, select {
@@ -18,7 +18,7 @@ label {
     margin-bottom: 8px;
 
     span {
-        color: color.adjust($tertiary_500, $lightness: -10%);
+        color: color.adjust(values.$tertiary_500, $lightness: -10%);
         margin-right: 10px;
     }
 
@@ -29,23 +29,23 @@ label {
 }
 
 input, select, textarea {
-    font-family: $font_primary;
+    font-family: values.$font_primary;
     font-size: 14px;
     height: 50px;
     padding: 0 16px;
-    border: solid 1px color.adjust($surface, $lightness: -2%);
+    border: solid 1px color.adjust(values.$surface, $lightness: -2%);
     border-radius: 10px;
     transition: border .2s ease;
-    background: $surface;
-    color: $text_700;
+    background: values.$surface;
+    color: values.$text_700;
 
     &:focus, &:active {
         outline: none;
-        border: solid 1px $tertiary_500;
+        border: solid 1px values.$tertiary_500;
     }
 
     &.icon {
-        font-family: $font_primary, "icomoon";
+        font-family: values.$font_primary, "icomoon";
     }
 }
 
@@ -54,13 +54,13 @@ textarea {
     resize: vertical;
     width: 100%;
     min-height: 200px;
-    font-family: $font_primary;
+    font-family: values.$font_primary;
     font-size: 14px;
     line-height: 26px;
 }
 
 input:disabled, select:disabled, textarea:disabled {
-    background: color.adjust($surface, $lightness: -4%);
+    background: color.adjust(values.$surface, $lightness: -4%);
 }
 
 input[type="checkbox"] {

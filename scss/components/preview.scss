@@ -1,7 +1,7 @@
 // Copyright (C) 2024 jmh
 // SPDX-License-Identifier: GPL-3.0-only
 
-@import "../values";
+@use "../values";
 
 .preview-strip {
     overflow-x: auto;
@@ -19,7 +19,7 @@
 }
 
 .preview-strip.white {
-    background: $tertiary_100;
+    background: values.$tertiary_100;
     border-radius: 20px;
 }
 
@@ -27,6 +27,6 @@
     content: ". . .";
     font-size: 22px;
     font-weight: 600;
-    color: $text_100;
+    color: values.$text_100;
     padding-left: 20px;
 }

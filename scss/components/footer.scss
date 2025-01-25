@@ -1,16 +1,16 @@
 // Copyright (C) 2023 jmh
 // SPDX-License-Identifier: GPL-3.0-only
 
-@import "../values";
+@use "../values";
 
 #foot {
     padding: 20px;
     font-size: 14px;
-    color: $text_100;
+    color: values.$text_100;
     text-align: center;
 }
 
-@media (min-width: $break_md) {
+@media (min-width: values.$break_md) {
     #foot {
         padding: 20px 60px;
     }

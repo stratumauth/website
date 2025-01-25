@@ -1,7 +1,7 @@
 // Copyright (C) 2023 jmh
 // SPDX-License-Identifier: GPL-3.0-only
 
-@import "values";
+@use "values";
 
 $spacing: 12px;
 
@@ -15,7 +15,7 @@ $spacing: 12px;
 }
 
 .clear {
-    @include clearfix;
+    @include values.clearfix;
 }
 
 .valign-middle {
@@ -78,7 +78,7 @@ $spacing: 12px;
     }
 }
 
-@media(max-width: $break_md) {
+@media(max-width: values.$break_md) {
     .sm-mt {
         margin-top: $spacing;
     }
@@ -114,7 +114,7 @@ $spacing: 12px;
     }
 }
 
-@media(min-width: $break_md) {
+@media(min-width: values.$break_md) {
     .md-mt {
         margin-top: $spacing;
     }
@@ -185,7 +185,7 @@ $spacing: 12px;
     }
 }
 
-@media(max-width: $break_md) {
+@media(max-width: values.$break_md) {
     .sm-pt {
         padding-top: $spacing;
     }
@@ -221,7 +221,7 @@ $spacing: 12px;
     }
 }
 
-@media(min-width: $break_md) {
+@media(min-width: values.$break_md) {
     .md-pt {
         padding-top: $spacing;
     }
@@ -271,27 +271,27 @@ $spacing: 12px;
 
 // Font sizes
 .mono {
-    font-family: $font_mono;
+    font-family: values.$font_mono;
 }
 
 .text-small {
     font-size: 12px;
-    line-height: 12px * $text_line_height_scale;
+    line-height: 12px * values.$text_line_height_scale;
 }
 
 .text-regular {
     font-size: 15px;
-    line-height: 15px * $text_line_height_scale;
+    line-height: 15px * values.$text_line_height_scale;
 }
 
 .text-medium {
     font-size: 18px;
-    line-height: 18px * $text_line_height_scale;
+    line-height: 18px * values.$text_line_height_scale;
 }
 
 .text-large {
     font-size: 26px;
-    line-height: 26px * $text_line_height_scale;
+    line-height: 26px * values.$text_line_height_scale;
 }
 
 // Appearance

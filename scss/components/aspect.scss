@@ -4,7 +4,7 @@
 // https://css-tricks.com/aspect-ratio-boxes/
 // Prevent Content Layout Shift
 
-@import "../values";
+@use "../values";
 
 .aspect {
     height: 0;
@@ -22,7 +22,7 @@
     }
 }
 
-@media (max-width: $break_md) {
+@media (max-width: values.$break_md) {
     .aspect.md {
         padding-top: 0 !important;
         height: auto;
