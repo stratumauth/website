@@ -9,3 +9,4 @@ graceful_timeout = 120
 timeout = 120
 keepalive = 5
 threads = 4
+worker_class = "gevent"
