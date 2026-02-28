@@ -12,6 +12,8 @@ class DevelopmentConfig(BaseConfig):
     URL = "http://localhost:5000"
     ALT_URL = "http://127.0.0.1:5000"
 
+    VITE_DEV_SERVER = "http://localhost:5173"
+
     SECRET_KEY = "testing"
     CACHE_TYPE = "SimpleCache"
 

@@ -3,6 +3,8 @@
 
 "use strict";
 
+import "./scss/main.scss";
+
 const $nav = document.getElementById("nav");
 
 function toggleNav() {

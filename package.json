@@ -2,28 +2,19 @@
     "name": "stratumwebsite",
     "version": "1.0.0",
     "description": "",
-    "main": "gulpfile.js",
     "type": "module",
     "scripts": {
-        "dev": "gulp",
-        "build": "gulp build"
+        "dev": "vite",
+        "build": "vite build"
     },
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "@babel/core": "^7.26.7",
-        "@babel/preset-env": "^7.26.7",
-        "esbuild": "^0.24.2",
-        "gulp": "^5.0.0",
-        "gulp-autoprefixer": "^9.0.0",
-        "gulp-babel": "^8.0.0",
-        "gulp-clean-css": "^4.3.0",
-        "gulp-environments": "^1.0.1",
-        "gulp-esbuild": "^0.14.0",
-        "gulp-sass": "^6.0.0",
-        "gulp-terser": "^2.1.0",
+        "glob": "^13.0.6",
+        "lightningcss": "^1.31.1",
         "normalize.css": "^8.0.1",
         "qrcode": "^1.5.4",
-        "sass": "^1.83.4"
+        "sass": "^1.97.3",
+        "vite": "^7.3.1"
     }
 }

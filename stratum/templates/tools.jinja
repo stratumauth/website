@@ -47,6 +47,8 @@
             </section>
         </main>
     </div>
+{% endblock %}
 
-    <script defer src="{{ url_for('static', filename='dist/tools.js') }}"></script>
+{% block foot %}
+    <script type="module" src="{{ get_module_path('tools') }}"></script>
 {% endblock %}

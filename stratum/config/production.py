@@ -13,6 +13,8 @@ class ProductionConfig(BaseConfig):
     URL = "https://stratumauth.com"
     ALT_URL = "http://www.stratumauth.com"
 
+    VITE_DEV_SERVER = None
+
     SECRET_KEY = _get_secret("flask_secret_key")
 
     CACHE_TYPE = "FileSystemCache"
