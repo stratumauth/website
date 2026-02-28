@@ -7,23 +7,12 @@ services:
       - FLASK_ENV=production
     ports:
       - "8000:8000"
-    networks:
-      - stratum
-    depends_on:
-      - redis
     secrets:
       - flask_secret_key
       - recaptcha_private_key
       - mail_username
       - mail_password
       - mail_recipient
-  
-  redis:
-    image: redis:7-alpine
-    container_name: stratum-redis
-    restart: always
-    networks:
-      - stratum
 
 secrets:
   flask_secret_key:
@@ -36,7 +25,3 @@ secrets:
     environment: MAIL_PASSWORD
   mail_recipient:
     environment: MAIL_RECIPIENT
-
-networks:
-  stratum:
-    driver: bridge

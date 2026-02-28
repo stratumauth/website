@@ -15,9 +15,8 @@ class ProductionConfig(BaseConfig):
 
     SECRET_KEY = _get_secret("flask_secret_key")
 
-    CACHE_TYPE = "RedisCache"
-    CACHE_REDIS_HOST = "redis"
-    CACHE_REDIS_PORT = 6379
+    CACHE_TYPE = "FileSystemCache"
+    CACHE_DIR = "/tmp/cache"
 
     RECAPTCHA_PUBLIC_KEY = "6Le0bZYUAAAAAC9gQDwwwRCEnN8l2rcG-o_kCd95"
     RECAPTCHA_PRIVATE_KEY = _get_secret("recaptcha_private_key")
