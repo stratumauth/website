@@ -71,7 +71,7 @@ jobs:
           access_token: ${{ secrets.BW_ACCESS_TOKEN }}
           secrets: |
             8e94c49e-5fb9-4a84-b49e-b210011962d5 > FLASK_SECRET_KEY
-            404ef33c-e193-4787-8903-b210011951d5 > RECAPTCHA_PRIVATE_KEY
+            404ef33c-e193-4787-8903-b210011951d5 > HCAPTCHA_PRIVATE_KEY
             c534a2fe-3fc6-47c3-bf08-b21001192353 > MAIL_USERNAME
             0cd8bdf2-e0b3-4988-be65-b21001193a6a > MAIL_PASSWORD
             2b41bff7-777e-4606-bcde-b21001190c37 > MAIL_RECIPIENT

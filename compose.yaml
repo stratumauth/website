@@ -9,7 +9,7 @@ services:
       - "8000:8000"
     secrets:
       - flask_secret_key
-      - recaptcha_private_key
+      - hcaptcha_private_key
       - mail_username
       - mail_password
       - mail_recipient
@@ -17,8 +17,8 @@ services:
 secrets:
   flask_secret_key:
     environment: FLASK_SECRET_KEY
-  recaptcha_private_key:
-    environment: RECAPTCHA_PRIVATE_KEY
+  hcaptcha_private_key:
+    environment: HCAPTCHA_PRIVATE_KEY
   mail_username:
     environment: MAIL_USERNAME
   mail_password:

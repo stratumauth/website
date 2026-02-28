@@ -20,8 +20,8 @@ class ProductionConfig(BaseConfig):
     CACHE_TYPE = "FileSystemCache"
     CACHE_DIR = "/tmp/cache"
 
-    RECAPTCHA_PUBLIC_KEY = "6Le0bZYUAAAAAC9gQDwwwRCEnN8l2rcG-o_kCd95"
-    RECAPTCHA_PRIVATE_KEY = _get_secret("recaptcha_private_key")
+    RECAPTCHA_PUBLIC_KEY = "534681dc-f6d2-490e-931e-2576068e7886"
+    RECAPTCHA_PRIVATE_KEY = _get_secret("hcaptcha_private_key")
 
     MAIL_SERVER = "email-smtp.eu-central-1.amazonaws.com"
     MAIL_PORT = 587
