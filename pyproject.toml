@@ -15,6 +15,6 @@ dependencies = [
     "gevent>=25.9.1",
     "gunicorn>=25.1.0",
     "mistune>=3.2.0",
-    "protobuf>=7.34.0",
+    "protobuf>=7.34.1",
     "requests>=2.32.5",
 ]
