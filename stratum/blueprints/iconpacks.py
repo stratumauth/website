@@ -6,6 +6,8 @@ import shutil
 import tempfile
 import random
 
+from concurrent.futures import ThreadPoolExecutor
+
 import requests
 
 from flask import Blueprint, current_app, render_template
@@ -61,10 +63,10 @@ def _get_icon_pack_from_asset(asset: dict) -> IconPack:
 @cache.cached(timeout=86400)
 def _get_icon_packs() -> list[IconPack]:
     release = _get_latest_release()
-    return [
-        _get_icon_pack_from_asset(a)
-        for a in filter(lambda a: a["name"].endswith(".iconpack"), release["assets"])
-    ]
+    assets = [a for a in release["assets"] if a["name"].endswith(".iconpack")]
+
+    with ThreadPoolExecutor(max_workers=len(assets)) as pool:
+        return list(pool.map(_get_icon_pack_from_asset, assets))
 
 
 @bp.get("/icon-packs")
