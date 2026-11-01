@@ -20,12 +20,13 @@ mail = Mail()
 def copyright_year_processor():
     return {"copyright_year": datetime.datetime.now().strftime("%Y")}
 
+
 @functools.lru_cache(maxsize=1)
 def _get_asset_manifest() -> dict[str, dict]:
     with open(
-            os.path.join(current_app.root_path, ".vite", "manifest.json"),
-            "r",
-            encoding="utf-8",
+        os.path.join(current_app.root_path, ".vite", "manifest.json"),
+        "r",
+        encoding="utf-8",
     ) as file:
         return json.load(file)
 

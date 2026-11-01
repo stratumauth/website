@@ -65,6 +65,7 @@ def backup_format():
         content=_get_markdown_file("doc/BACKUP_FORMAT.md"),
     )
 
+
 @bp.get("/wiki/webdav-backup")
 def webdav():
     return render_template(
@@ -73,6 +74,7 @@ def webdav():
         description="Here's how to back up your Stratum data to a WebDAV server",
         content=_get_wiki_page("Back-up-to-WebDAV.md"),
     )
+
 
 @bp.get("/wiki/import-from-google-authenticator")
 def google_authenticator():

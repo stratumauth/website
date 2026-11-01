@@ -1,4 +1,4 @@
-FROM ghcr.io/astral-sh/uv:python3.14-alpine AS python-build
+FROM ghcr.io/astral-sh/uv:python3.15-alpine AS python-build
 
 ENV UV_COMPILE_BYTECODE=1
 ENV UV_LINK_MODE=copy
@@ -17,7 +17,7 @@ ADD uv.lock /app/uv.lock
 RUN --mount=type=cache,target=/root/.cache/uv \
     uv sync --frozen --no-dev
 
-FROM python:3.14-alpine
+FROM python:3.15-alpine
 LABEL org.opencontainers.image.source=https://github.com/stratumauth/website
 
 COPY ./stratum /app/stratum
